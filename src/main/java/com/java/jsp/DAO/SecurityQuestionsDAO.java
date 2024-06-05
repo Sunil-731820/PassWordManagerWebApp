@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.java.jsp.Patient;
 import com.java.jsp.Helper.ConnectionHelper;
 import com.java.jsp.Model.SecurityQuestions;
 
@@ -28,15 +27,16 @@ public class SecurityQuestionsDAO {
 	
 	public String addSecurityQuestions(SecurityQuestions securityQuestions) throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnection();
-		String cmd = "insert into SecurityQuestionsForRestoringPassword(usernickName,userIdol,userSubject,userFavoriteColor,userChildHoodSchool,userBelongingCity,userPersonalEmailId) values(?,?,?,?,?,?,?)";
+		String cmd = "insert into SecurityQuestionsForRestoringPassword(securityId,usernickName,userIdol,userSubject,userFavoriteColor,userChildHoodSchool,userBelongingCity,userPersonalEmailId) values(?,?,?,?,?,?,?,?)";
 		pst = connection.prepareStatement(cmd);
-		pst.setString(1,securityQuestions.getUsernickName());
-		pst.setString(2, securityQuestions.getUserIdol());
-		pst.setString(3, securityQuestions.getUserSubject());
-		pst.setString(4, securityQuestions.getUserFavoriteColor());
-		pst.setString(5, securityQuestions.getUserChildHoodSchool());
-		pst.setString(6, securityQuestions.getUserBelongingCity());
-		pst.setString(7, securityQuestions.getUserPersonalEmailId());
+		pst.setInt(1, securityQuestions.getSecurityId());
+		pst.setString(2,securityQuestions.getUsernickName());
+		pst.setString(3, securityQuestions.getUserIdol());
+		pst.setString(4, securityQuestions.getUserSubject());
+		pst.setString(5, securityQuestions.getUserFavoriteColor());
+		pst.setString(6, securityQuestions.getUserChildHoodSchool());
+		pst.setString(7, securityQuestions.getUserBelongingCity());
+		pst.setString(8, securityQuestions.getUserPersonalEmailId());
 		pst.executeUpdate();
 		return "Security Questions is Added Successfully";
 		

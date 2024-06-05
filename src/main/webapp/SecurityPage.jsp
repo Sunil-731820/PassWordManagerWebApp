@@ -70,7 +70,7 @@ int securityId = dao.generateSecurityQuestionsId();
                 <b>Password Manager App</b>
             </h1>
         </div>
-        <form action="addpatient.jsp" method="post">
+        <form action="SecurityPage.jsp" method="post">
             <!-- Sign up form -->
             <section class="signup">
                 <div class="container"> 
@@ -80,7 +80,7 @@ int securityId = dao.generateSecurityQuestionsId();
                             <form class="register-form" id="register-form">
                              <div class="form-group">
                                     <label for="securityId"><i class="zmdi zmdi-email"></i></label>
-                                    <input type="number" name="securityId" id="securityId" value="<%=securityId%>" />
+                                    <input type="securityId" name="securityId" id="securityId" value="<%=securityId%>" />
                                 </div>
                                 <div class="form-group">
                                     <label for="usernickName"><i class="zmdi zmdi-email"></i></label>
@@ -97,21 +97,21 @@ int securityId = dao.generateSecurityQuestionsId();
                                 </div>
                                 <div class="form-group">
                                     <label for="userFavoriteColor"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="city" id="userFavoriteColor" placeholder="Enter User Favorite Color " required="required"/>
+                                    <input type="text" name="userFavoriteColor" id="userFavoriteColor" placeholder="Enter User Favorite Color " required="required"/>
                                 </div>
                                
                                  <div class="form-group">
                                     <label for="userChildHoodSchool"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="email" id="userChildHoodSchool" placeholder="Enter Your User Childhood School " required="required"/>
+                                    <input type="text" name="userChildHoodSchool" id="userChildHoodSchool" placeholder="Enter Your User Childhood School " required="required"/>
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="userBelongingCity"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="age" id="userBelongingCity" placeholder="Enter Your User Belonging City" required="required"/>
+                                    <input type="text" name="userBelongingCity" id="userBelongingCity" placeholder="Enter Your User Belonging City" required="required"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="userPersonalEmailId"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="address" id="userPersonalEmailId" placeholder="Enter Your Personal Email Id" required="required"/>
+                                    <input type="text" name="userPersonalEmailId" id="userPersonalEmailId" placeholder="Enter Your Personal Email Id" required="required"/>
                                 </div>
                                 <div class="form-group form-button">
                                     <input type="submit" name="signup" id="signup" class="form-submit" value="Add Security Questions"/>
@@ -131,14 +131,14 @@ int securityId = dao.generateSecurityQuestionsId();
                 <%
         if(request.getParameter("securityId")!=null && request.getParameter("usernickName")!=null){
         	SecurityQuestions security = new SecurityQuestions();
-        	security.setId(Integer.parseInt(request.getParameter("id")));
-        	security.setFname(request.getParameter("fname"));
-        	security.setLname(request.getParameter("lname"));
-        	security.setGender(request.getParameter("gender"));
-        	security.setMobile(request.getParameter("mobile"));
-        	security.setCity(request.getParameter("city"));
-        	security.setEmail(request.getParameter("email"));
-        	security.setAge(request.getParameter("age"));
+        	security.setSecurityId(Integer.parseInt(request.getParameter("securityId")));
+        	security.setUsernickName(request.getParameter("usernickName"));
+        	security.setUserIdol(request.getParameter("userIdol"));
+        	security.setUserSubject(request.getParameter("userSubject"));
+        	security.setUserFavoriteColor(request.getParameter("userFavoriteColor"));
+        	security.setUserChildHoodSchool(request.getParameter("userChildHoodSchool"));
+        	security.setUserBelongingCity(request.getParameter("userBelongingCity"));
+        	security.setUserPersonalEmailId(request.getParameter("userPersonalEmailId"));
         	dao.addSecurityQuestions(security);
         %>
         
