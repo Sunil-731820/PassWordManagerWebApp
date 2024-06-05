@@ -1,3 +1,4 @@
+
 <%@page import="com.java.jsp.DAO.UserLoginDAO"%>
 <%@page import="com.java.jsp.PasswordEncryptionsAndDecryptions.HashingThePassword"%>
 <%@page import="com.java.jsp.Model.UserLogin"%>
@@ -45,8 +46,7 @@
 <body>
 
  <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <a href="#" class="navbar-brand"> <img src="images/SideIcons.jpeg"
-                                                   height="30" width="100" alt="PasswordManager">
+            <a href="#" class="navbar-brand">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse"
                     data-target="#navbarCollapse">
@@ -55,23 +55,23 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ml-auto" style="margin-right: 30px;">
-                    <a class="dropdown-item" href="RegisterPage.jsp">Sign Up</a>
+                    <a class="dropdown-item" href="UserRegister.jsp">Sign Up</a>
                 </div>
             </div>
         </nav>
         <div>
             <h1>
-                <b>Welcome To Health Care </b>
+                <b>Password Manager</b>
             </h1>
         </div>
         <!-- Sing in  Form -->
-        <form action="LoginPage.jsp" method="post">
+        <form action="UserLogin.jsp" method="post">
             <section class="sign-in">
                 <div class="container">
                     <div class="signin-content">
                         <div class="signin-image">
                             <figure><img src="img/signin-image.jpg" alt="sing up image"></figure>
-                            <a href="RegisterPage.jsp" class="signup-image-link">Create an account</a>
+                            <a href="UserRegister.jsp" class="signup-image-link">Create an account</a>
                         </div>
 
                         <div class="signin-form">

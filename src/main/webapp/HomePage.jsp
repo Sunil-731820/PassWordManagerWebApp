@@ -26,8 +26,10 @@
 </head>
 <style type="text/css">
         body {
-            background-image: url("images/PasswordHomePage.png");
+            background-image: url("img/BackgrounImages.jpg");
             background-color: #cccccc;
+            
+            
         }
         .img-rounded {
             height: 100%;
@@ -40,18 +42,17 @@
     </style>
 <body>
  <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <a href="#" class="navbar-brand"> <img src="images/SideIcons.jpeg" width="160" height="200"></a>
+            <a href="#" class="navbar-brand"> </a>
             <div style="border-radius: 12px;color: red;" align="center">
               <h1>
-                <b style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password Manager Web App</b><br>
+                <b style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password Manager App</b><br>
             </h1>
           
             </div>
-
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ml-auto" style="margin-right: 20px;">
-                    <a class="dropdown-item" href="LoginAndRegistration/LoginPage.jsp">Sign In</a>
-                    <a class="dropdown-item" href="LoginAndRegistration/RegisterPage.jsp">Sign Up</a>
+                <div class="navbar-nav ml-auto" style="margin-right: 30px;">
+                    <a class="dropdown-item" href="UserLogin.jsp">Sign In</a>
+                    <a class="dropdown-item" href="UserRegister.jsp">Sign Up</a> 
                     
                 </div>
             </div>
