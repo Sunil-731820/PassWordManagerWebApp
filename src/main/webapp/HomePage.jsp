@@ -40,17 +40,18 @@
     </style>
 <body>
  <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <a href="#" class="navbar-brand"> <img src="img/2855.jpeg"></a>
+            <a href="#" class="navbar-brand"> <img src="images/SideIcons.jpeg" width="160" height="200"></a>
             <div style="border-radius: 12px;color: red;" align="center">
               <h1>
-                <b style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome Password Manager</b><br>
+                <b style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password Manager Web App</b><br>
             </h1>
           
             </div>
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ml-auto" style="margin-right: 30px;">
-                    <a class="dropdown-item" href="AdminLogin.jsp">Sign In</a>
-                    <a class="dropdown-item" href="AdminRegister.jsp">Sign Up</a>
+                <div class="navbar-nav ml-auto" style="margin-right: 20px;">
+                    <a class="dropdown-item" href="LoginAndRegistration/LoginPage.jsp">Sign In</a>
+                    <a class="dropdown-item" href="LoginAndRegistration/RegisterPage.jsp">Sign Up</a>
                     
                 </div>
             </div>
