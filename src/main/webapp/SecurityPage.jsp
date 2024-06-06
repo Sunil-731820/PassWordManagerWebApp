@@ -1,7 +1,7 @@
 <%@page import="com.java.jsp.Model.SecurityQuestions"%>
 <%@page import="com.java.jsp.DAO.SecurityQuestionsDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -141,7 +141,7 @@ int securityId = dao.generateSecurityQuestionsId();
         	security.setUserPersonalEmailId(request.getParameter("userPersonalEmailId"));
         	dao.addSecurityQuestions(security);
         %>
-        
+        <jsp:forward page="HomePage.jsp"/>
         <% 
         }
         %>

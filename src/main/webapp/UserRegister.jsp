@@ -2,7 +2,7 @@
 <%@page import="com.java.jsp.PasswordEncryptionsAndDecryptions.HashingThePassword"%>
 <%@page import="com.java.jsp.DAO.UserLoginDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>

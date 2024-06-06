@@ -3,7 +3,7 @@
 <%@page import="com.java.jsp.PasswordEncryptionsAndDecryptions.HashingThePassword"%>
 <%@page import="com.java.jsp.Model.UserLogin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,7 +103,7 @@
         		UserLoginDAO dao = new UserLoginDAO();
         		HashingThePassword hashPasword = new HashingThePassword();
         		String HashedPassword = hashPasword.hashPasswordForLoginAttempts(userLoginPassword);
-        		int count = dao.adminLogIn(userLoginEmailId, HashedPassword);
+        		int count = dao.UserLogIn(userLoginEmailId, HashedPassword);
         		if(count==1){
         %>
 			<jsp:forward page="DashBoard.jsp"/>

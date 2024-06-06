@@ -1,8 +1,6 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="com.java.jsp.Helper.ConnectionHelper"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="com.java.jsp.DAO.SearchUserByUsingEmailIdDAO"%>
+<%@page import="com.java.jsp.Model.SavingPasswordInEncryptedFormat"%>
+<%@page import="com.java.jsp.PasswordEncryptionsAndDecryptions.HashingThePassword"%>
+<%@page import="com.java.jsp.DAO.SavingPasswordInEncryptedFormatDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -46,23 +44,30 @@
     </style>
     
 
- </head>
+
+</head>
 <body>
+
+<%
+	 SavingPasswordInEncryptedFormatDAO dao = new SavingPasswordInEncryptedFormatDAO();
+	HashingThePassword hashPaswordDao = new HashingThePassword();
+%>
+
  <h2 align="center"> Password Manager App </h2>
- <form action="searchUser" method="post">
+ <form action="AddPassword.jsp" method="post">
             <!-- Sign up form -->
             <section class="signup">
                 <div class="container"> 
                     <div class="signup-content"> 
                         <div class="signup-form">
-                            <h2 class="form-title">Enter G-mail For Saving Password </h2>
+                            <h2 class="form-title">Your Password Will Saved In Encrypted Format.. </h2>
                             <form class="register-form" id="register-form">
                                 <div class="form-group">
                                     <label for="userPersonalEmailId"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="text" name="userPersonalEmailId" id="userPersonalEmailId" placeholder="Enter Your Personal Email Id" required="required"/>
+                                    <input type="text" name="userSavingPassword" id="userSavingPassword" placeholder="Enter Your Personal Password" required="required"/>
                                 </div>
                                 <div class="form-group form-button">
-                                    <input type="submit" name="signup" id="signup" class="form-submit" value="Search"/>
+                                    <input type="submit" name="signup" id="signup" class="form-submit" value="Add Password"/>
                                 </div>
                                
                             </form>
@@ -76,7 +81,26 @@
             </section>
         </form>
         
+        <%
+         String userSavingPassword = request.getParameter("userSavingPassword");
+         if(userSavingPassword !=null && !userSavingPassword.isEmpty()){
+        	SavingPasswordInEncryptedFormat savedPassword = new SavingPasswordInEncryptedFormat();
+        	String hashedPassword = hashPaswordDao.hashPasswordForLoginAttempts(userSavingPassword);
+        	savedPassword.setUserSavingPassword(hashedPassword);
+        	dao.addThePasswordInEncryptedFormat(savedPassword);
+        	 %>
+        	 
+        	 <jsp:forward page="PasswordAddedSuccessfully.jsp"/>
+		<%          }
+         %> 
+         
+         
+         
+         <jsp:forward page="PasswordAddingErrorPage.jsp"/> 
+       
       
+
+
 
 </body>
 </html>

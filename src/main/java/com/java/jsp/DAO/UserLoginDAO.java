@@ -41,7 +41,7 @@ public class UserLoginDAO {
 	}
 	
 //	This is the Login methods 
-	public int adminLogIn(String userLoginEmailId , String userLoginPassword) throws ClassNotFoundException, SQLException {
+	public int UserLogIn(String userLoginEmailId , String userLoginPassword) throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnection();
 		String cmd = "select count(*) cnt from userLogin where userLoginEmailId=? and userLoginPassword=?";
 		pst = connection.prepareStatement(cmd);
@@ -52,5 +52,17 @@ public class UserLoginDAO {
 		int count = res.getInt("cnt");
 		return count;
 	}
+	
+////	Searching The Data using email id : 
+//	
+//	public void searchUserEmailbyEmailId(String userLoginEmailId) throws ClassNotFoundException, SQLException {
+//		
+//		connection = ConnectionHelper.getConnection();
+//		String cmd = "select *from userLogin where userLoginEmailId=?";
+//		pst = connection.prepareStatement(cmd);
+//		pst.setString(1, userLoginEmailId);
+//		int res = pst.executeUpdate();
+//		res
+//	}
 
 }
