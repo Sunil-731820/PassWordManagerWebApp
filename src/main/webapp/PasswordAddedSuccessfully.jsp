@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-Passowrd is Added Successfully ........
+<body onload="alert.html">
+Password is Added Successfully ........
 </body>
 </html>

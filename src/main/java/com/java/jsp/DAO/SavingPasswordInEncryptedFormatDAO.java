@@ -16,7 +16,7 @@ public class SavingPasswordInEncryptedFormatDAO {
 //	Adding The Password In database in Encrypted format
 	public String addThePasswordInEncryptedFormat(SavingPasswordInEncryptedFormat SavingPasswordInEncryptedFormat) throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnection();
-		String cmd = "insert into userLogin(userSavingPassword) values (?)";
+		String cmd = "insert into savingpasswordinencryptedformat(userSavingPassword) values (?)";
 		pst = connection.prepareStatement(cmd);
 		pst.setString(1, SavingPasswordInEncryptedFormat.getUserSavingPassword());
 		pst.executeUpdate();
