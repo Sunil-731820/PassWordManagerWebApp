@@ -58,7 +58,7 @@ public class VerifyingEmailIdForViewingThePassword {
 				out.println("<p>No user found with email: " + userPersonalEmailId + "</p>"); 
                 RequestDispatcher dispatcher = request.getRequestDispatcher("NoViewPasswordTableFound.jsp");
                 dispatcher.forward(request, response);
-            }
+            } 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             out.println("<p>Error occurred while searching for user.</p>");
