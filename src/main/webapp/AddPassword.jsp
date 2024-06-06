@@ -1,3 +1,4 @@
+<%@page import="com.java.jsp.Servlet.SearchUserServlet"%>
 <%@page import="com.java.jsp.Model.SavingPasswordInEncryptedFormat"%>
 <%@page import="com.java.jsp.PasswordEncryptionsAndDecryptions.HashingThePassword"%>
 <%@page import="com.java.jsp.DAO.SavingPasswordInEncryptedFormatDAO"%>
@@ -51,6 +52,9 @@
 <%
 	 SavingPasswordInEncryptedFormatDAO dao = new SavingPasswordInEncryptedFormatDAO();
 	HashingThePassword hashPaswordDao = new HashingThePassword();
+	
+			
+ 
 %>
 
  <h2 align="center"> Password Manager App </h2>
@@ -80,8 +84,9 @@
                 </div>
             </section>
         </form>
-        
+       
         <%
+        	
          String userSavingPassword = request.getParameter("userSavingPassword");
          if(userSavingPassword !=null && !userSavingPassword.isEmpty()){
         	SavingPasswordInEncryptedFormat savedPassword = new SavingPasswordInEncryptedFormat();
