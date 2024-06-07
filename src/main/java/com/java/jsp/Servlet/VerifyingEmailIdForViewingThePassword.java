@@ -8,16 +8,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.java.jsp.Helper.ConnectionHelper;
+  
 
-@WebServlet("/searchUserForViewingThePassword")
-public class VerifyingEmailIdForViewingThePassword {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/searchUser")
+public class VerifyingEmailIdForViewingThePassword extends HttpServlet {
+	
+    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userPersonalEmailId = request.getParameter("userPersonalEmailId");
@@ -51,18 +55,17 @@ public class VerifyingEmailIdForViewingThePassword {
             	out.println("<p>User password : " + res.getString("userLoginPassword") + "</p>");
 				
                 
-                RequestDispatcher dispatcher = request.getRequestDispatcher("ViewPasswordTableForSpecificUser.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("AddPassword.jsp");
                 dispatcher.forward(request, response);
             } else {
 				
 				out.println("<p>No user found with email: " + userPersonalEmailId + "</p>"); 
-                RequestDispatcher dispatcher = request.getRequestDispatcher("NoViewPasswordTableFound.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("NoEmailIdFound.jsp");
                 dispatcher.forward(request, response);
-            } 
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             out.println("<p>Error occurred while searching for user.</p>");
         } 
     }
-
 }

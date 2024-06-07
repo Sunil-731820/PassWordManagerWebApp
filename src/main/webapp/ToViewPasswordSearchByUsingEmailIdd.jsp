@@ -42,9 +42,8 @@
 </head>
 <body>
 
-This is To Search the Password  Using Email id After That It will redirect to you in the View View Password table Sections 
  <h2 align="center"> Password Manager App </h2>
- <form action="searchUserForViewingThePassword" method="post">
+ <form action="searchUser" method="post">
             <!-- Sign up form -->
             <section class="signup">
                 <div class="container"> 

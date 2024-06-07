@@ -2,7 +2,6 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="com.java.jsp.Helper.ConnectionHelper"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="com.java.jsp.DAO.SearchUserByUsingEmailIdDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -75,7 +74,7 @@
                 </div>
             </section>
         </form>
-        
+         
       
 
 </body>
